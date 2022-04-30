@@ -9,7 +9,7 @@ int main()
 	char buff[MAX_LENGTH];
 	const char *fname = "test.txt";
 
-	int cnt = 0, cnt_1 = 0;
+	int cnt = 0;
 
 	fp = fopen(fname, "r");
 
