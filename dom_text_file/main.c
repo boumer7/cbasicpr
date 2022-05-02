@@ -10,7 +10,7 @@ int main()
 	char buff[MAX_LENGTH];
 	const char *fname = "test.txt";
 
-	int cnt = 0;
+	int cnt = 0, min = 0;
 
 	fp = fopen(fname, "r");
 
@@ -24,15 +24,20 @@ int main()
 
 		for (int i = 0; i < sizeof(buff); i++) {
 
-			if (buff[i] == 'd' || buff[i] == 'o' || buff[i] == 'm') {
+			if (buff[i] == 'd')
 				cnt++;
 
-			}
+			if (cnt == 1 && buff[i] == 'o')
+				cnt++;
+
+			if (cnt == 2 && buff[i] == 'm')
+				cnt++;
+
 
 		}
 
 	}
-	if (cnt >= 3)
+	if (cnt == 3)
 		printf("Da, mozhno");
 	else
 		printf("Net, nelzya");
